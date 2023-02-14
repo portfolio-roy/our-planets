@@ -21,7 +21,7 @@ const MainBody = () => {
       if (selectedOption === 'all') {
         return true;
       }
-      return body.type.includes(selectedOption);
+      return body.type === selectedOption;
     },
   );
   const options = [...new Set(elements.map((body) => body.type))];
