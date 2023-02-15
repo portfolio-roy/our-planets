@@ -14,6 +14,7 @@ export const fetchBodiesAction = () => async (dispatch) => {
     volExp: body.vol.volExponent,
     radius: body.equaRadius,
     type: body.bodyType,
+    moons: body.moons,
     image: dataLocal[index].image,
     description: dataLocal[index].description,
   }));
