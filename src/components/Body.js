@@ -19,7 +19,7 @@ const Body = ({
               <div className="col-6 col-md-4 col-sm-4 banner-text left">
                 <img className="featured-image" src={image} alt={name} />
               </div>
-              <div className="col-6 col-md-4 col-sm-4 banner-text right">
+              <div className="col-6 col-md-8 col-sm-4 banner-text right">
                 <h3>{name}</h3>
                 <h6>
                   Type:
