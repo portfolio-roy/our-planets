@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Cabin", sans-serif;
 }
+
 body {
   background-image: url("./assets/images/night-sky.jpg");
   background-repeat: no-repeat;
@@ -12,23 +13,28 @@ body {
   background-size: cover;
   color: white;
 }
+
 #root {
   background-color: rgba(44, 102, 237, 0.503);
   padding-bottom: 48px;
 }
+
 .navbar {
   background-color: rgba(44, 102, 237, 0.803);
   display: flex;
   align-items: center;
   font-size: 1.5rem;
+
   h1 {
     margin: 0;
   }
+
   .right-menu {
     display: flex;
     gap: 8px;
   }
 }
+
 .banner {
   margin-top: 64px;
   background-image: url("./assets/images/solar_system.jpg");
@@ -40,14 +46,17 @@ body {
     background-color: rgba(44, 102, 237, 0.503);
     padding: 50px 0;
   }
+
   .jumbotron {
     padding: 24px;
     display: flex;
     justify-content: flex-end;
+
     .banner-text {
       padding: 24px;
       background-color: rgba(0, 0, 0, 0.503);
       border-radius: 8px;
+
       &.right {
         background-color: rgba(0, 0, 0, 0.2);
         display: flex;
@@ -57,9 +66,11 @@ body {
     }
   }
 }
+
 a {
   color: white;
 }
+
 .filter {
   margin: 24px 0;
   background-color: rgba(44, 102, 237, 0.5);
@@ -67,44 +78,63 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+
   select {
     font-size: 20px;
     padding: 4px;
     max-width: 250px;
+
     option {
       font-size: 20px;
     }
   }
 }
+
 .item-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   gap: 16px;
 }
+
 .item-link {
   text-decoration: none;
   color: white;
 }
+
+.source {
+  font-size: small;
+  font-style: italic;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .body-thumb {
   background-color: rgb(44, 102, 237);
   border-radius: 8px;
+
   .info {
     padding: 8px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0 0 8px 8px;
+
     h3 {
       font-size: 20px;
     }
+
     h5 {
       font-size: 18px;
     }
+
     p {
       font-size: 14px;
       margin: 0;
     }
   }
 }
+
 .thumbnail,
 .featured-image {
   width: 100%;
@@ -112,12 +142,15 @@ a {
   object-fit: cover;
   object-position: center;
 }
+
 .thumbnail {
   border-radius: 8px 8px 0 0;
 }
+
 .featured-image {
   border-radius: 8px;
 }
+
 .single-item {
   display: flex;
   flex-direction: row;
@@ -125,9 +158,11 @@ a {
   background-color: rgba(34, 85, 203, 0.787);
   padding: 16px;
 }
+
 .description {
   padding: 16px;
 }
+
 .quick-facts {
   background-color: rgba(128, 128, 128, 0.2);
   padding: 16px;
@@ -136,25 +171,20 @@ a {
   margin-bottom: 24px;
 }
 
-.source {
-  font-size: small;
-  font-style: italic;
-  p {
-    margin-bottom: 0;
-  }
-}
-
 @media screen and (max-width: 720px) {
   .item-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   h1 {
     font-size: 16px;
   }
+
   .jumbotron {
     flex-direction: column;
     gap: 16px;
   }
+
   .single-item {
     flex-direction: column;
   }
