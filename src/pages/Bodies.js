@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import BodyThumb from '../components/BodyThumb';
 import { fetchBodiesAction } from '../redux/bodies/bodies';
 import SingleBody from './SingleBody';
+import Hero from '../components/Hero';
 
 const MainBody = () => {
   const dispatch = useDispatch();
@@ -26,34 +27,37 @@ const MainBody = () => {
   );
   const options = [...new Set(elements.map((body) => body.type))];
   return (
-    <div className="container">
-      <div className="filter">
-        <h5>Category:</h5>
-        <select className="select form-select" onChange={handleChange}>
-          <option value="all">All</option>
-          {options.map((option) => (
-            <option value={option} key={option}>{option}</option>
+    <>
+      <Hero />
+      <div className="container">
+        <div className="filter">
+          <h5>Category:</h5>
+          <select className="select form-select" onChange={handleChange}>
+            <option value="all">All</option>
+            {options.map((option) => (
+              <option value={option} key={option}>{option}</option>
+            ))}
+          </select>
+        </div>
+        <div className="col-md-12 item-grid">
+          {filteredBodies.map((body) => (
+            <Link className="item-link" to={`/single/${body.id}`} key={body.id} element={<SingleBody />}>
+              <BodyThumb
+                name={body.name}
+                massVal={body.massVal}
+                massExp={body.massExp}
+                volVal={body.volVal}
+                volExp={body.volExp}
+                radius={body.radius}
+                image={body.image}
+                moons={body.moons}
+                type={body.type}
+              />
+            </Link>
           ))}
-        </select>
+        </div>
       </div>
-      <div className="col-md-12 item-grid">
-        {filteredBodies.map((body) => (
-          <Link className="item-link" to={`/single/${body.id}`} key={body.id} element={<SingleBody />}>
-            <BodyThumb
-              name={body.name}
-              massVal={body.massVal}
-              massExp={body.massExp}
-              volVal={body.volVal}
-              volExp={body.volExp}
-              radius={body.radius}
-              image={body.image}
-              moons={body.moons}
-              type={body.type}
-            />
-          </Link>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 

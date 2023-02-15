@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&family=Lato:wght@700&display=swap");
+@import url("./assets/css/bootstrap.min.css");
 
 * {
   box-sizing: border-box;
@@ -11,7 +12,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  color: white;
+  color: white !important;
 }
 
 #root {
@@ -44,7 +45,11 @@ body {
 
   .overlay {
     background-color: rgba(44, 102, 237, 0.503);
-    padding: 50px 0;
+    padding: 0;
+
+    .container {
+      padding: 0;
+    }
   }
 
   .jumbotron {
@@ -62,13 +67,14 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-end;
       }
     }
   }
 }
 
 a {
-  color: white;
+  color: white !important;
 }
 
 .filter {
@@ -93,32 +99,51 @@ a {
 .item-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 1fr;
   gap: 16px;
+  align-items: stretch;
 }
 
 .item-link {
   text-decoration: none;
   color: white;
+  display: flex;
+  align-items: stretch;
 }
 
 .source {
   font-size: small;
   font-style: italic;
+  padding: 8px;
 
   p {
     margin-bottom: 0;
   }
 }
 
+.quick-facts {
+  background-color: rgba(44, 102, 237, 0.6);
+  width: 100%;
+  margin-bottom: 24px;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 16px;
+
+    &:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
 .body-thumb {
-  background-color: rgb(44, 102, 237);
+  background-color: rgb(35, 75, 167);
   border-radius: 8px;
 
   .info {
     padding: 8px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 0 0 8px 8px;
 
     h3 {
       font-size: 20px;
@@ -148,7 +173,7 @@ a {
 }
 
 .featured-image {
-  border-radius: 8px;
+  border-radius: 50%;
 }
 
 .single-item {
@@ -156,19 +181,21 @@ a {
   flex-direction: row;
   gap: 16px;
   background-color: rgba(34, 85, 203, 0.787);
-  padding: 16px;
+  padding: 0;
+}
+
+.single-jumbo {
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: space-between !important;
+
+  .left,
+  .right {
+    background-color: transparent !important;
+  }
 }
 
 .description {
-  padding: 16px;
-}
-
-.quick-facts {
-  background-color: rgba(128, 128, 128, 0.2);
-  padding: 16px;
-  max-width: 320px;
-  border-radius: 8px;
-  margin-bottom: 24px;
+  padding: 16px 0;
 }
 
 @media screen and (max-width: 720px) {
@@ -177,15 +204,30 @@ a {
   }
 
   h1 {
-    font-size: 16px;
-  }
-
-  .jumbotron {
-    flex-direction: column;
-    gap: 16px;
+    font-size: 16px !important;
   }
 
   .single-item {
     flex-direction: column;
+  }
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar {
+    .container {
+      padding: 0 16px;
+    }
+  }
+
+  .overview {
+    display: none;
+  }
+
+  .banner-text {
+    padding: 8px !important;
   }
 }

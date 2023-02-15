@@ -11,65 +11,88 @@ const Body = ({
     moonCount = moons.length;
   }
   return (
-    <div className="col-md-12 single-item">
-      <div className="col-md-4 col-sm-12">
-        <img className="featured-image" src={image} alt={name} />
-      </div>
-      <div className="col-md-8 col-sm-12 description">
-        <h3>{name}</h3>
-        <h5>
-          Type:
-          {' '}
-          {type}
-        </h5>
-        <div className="quick-facts">
-          <p>
-            <strong>Mass: </strong>
-            {massVal}
-            x10
-            <sup>{massExp}</sup>
-            {' '}
-            kg
-          </p>
-          <p>
-            <strong>Volume: </strong>
-            {volVal}
-            x10
-            <sup>{volExp}</sup>
-            {' '}
-            km
-          </p>
-          <p>
-            <strong>Equatorial Radius: </strong>
-            {radius}
-            {' '}
-            km
-          </p>
-          {moonCount !== 0
+    <>
+      <section className="banner">
+        <div className="overlay col-md-12">
+          <div className="container">
+            <div className="jumbotron single-jumbo">
+              <div className="col-6 col-md-4 col-sm-4 banner-text left">
+                <img className="featured-image" src={image} alt={name} />
+              </div>
+              <div className="col-6 col-md-4 col-sm-4 banner-text right">
+                <h3>{name}</h3>
+                <h6>
+                  Type:
+                  {' '}
+                  {type}
+                </h6>
+                <p className="overview text-end">{description}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="col-md-12 single-item">
+
+        <div className="col-md-12 description">
+
+          <div className="quick-facts">
+            <p>
+              <strong>Mass: </strong>
+              <span>
+                {massVal}
+                x10
+                <sup>{massExp}</sup>
+                {' '}
+                kg
+              </span>
+            </p>
+            <p>
+              <strong>Volume: </strong>
+              <span>
+                {volVal}
+                x10
+                <sup>{volExp}</sup>
+                {' '}
+                km
+              </span>
+            </p>
+            <p>
+              <strong>Equatorial Radius: </strong>
+              <span>
+                {radius}
+                {' '}
+                km
+              </span>
+            </p>
+            {moonCount !== 0
         && (
         <p>
           <strong>Moons: </strong>
-          {' '}
-          {moonCount}
+          <span>
+            {' '}
+            {moonCount}
+          </span>
         </p>
         )}
-        </div>
-        <h4>Overview</h4>
-        <p>{description}</p>
-        <div className="source">
-          <p>
-            Image and overview sourece:
-            {' '}
-            <a href="https://solarsystem.nasa.gov/planets/overview/">NASA</a>
-          </p>
-          <p>
-            Api:
-            {' '}
-            <a href="https://api.le-systeme-solaire.net/">The Solar System OpenData</a>
-          </p>
+          </div>
+
+          <div className="source">
+            <p>
+              Image and overview sourece:
+              {' '}
+              <a href="https://solarsystem.nasa.gov/planets/overview/">NASA</a>
+            </p>
+            <p>
+              Api:
+              {' '}
+              <a href="https://api.le-systeme-solaire.net/">The Solar System OpenData</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
