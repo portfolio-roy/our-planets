@@ -201,6 +201,7 @@ a {
 @media screen and (max-width: 720px) {
   .item-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 16px;
   }
 
   h1 {
@@ -229,8 +230,5 @@ a {
 
   .banner-text {
     padding: 8px !important;
-  }
-  .item-grid {
-    padding: 16px;
   }
 }
