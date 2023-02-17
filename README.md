@@ -24,7 +24,7 @@
 
 # 📖 The Kingdom of The Sun <a name="about-project"></a>
 
-**The Kingdom of The Sun** is a single-page website where users can view top 10 countries in Asia and can see top 10 countries population graph from 1970-2023.
+**The Kingdom of The Sun** is a single-page website where users can view information about our solar system.
 
 ## 🛠 Built With <a name="built-with"></a>
 
